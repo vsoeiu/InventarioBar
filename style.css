@@ -1,0 +1,210 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    background-image: url('../images/images.jpg'); /* Establece la imagen de fondo. NOTA EL "../" para subir de nivel */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    color: #e0e0e0; /* Texto claro para contraste */
+    display: flex; /* Habilita Flexbox para centrar el contenido del body */
+    justify-content: center; /* Centra horizontalmente el contenido del body */
+    align-items: center; /* Centra verticalmente el contenido del body */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto completo de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+}
+
+.container {
+    max-width: 960px;
+    width: 90%; /* Usa un ancho porcentual para mejor responsividad */
+    background-color: #191616ae; /* Negro suave para el contenedor principal */
+    padding: 30px; /* Más padding para espacio */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow:
+        0 0 20px rgba(17, 15, 10, 0.7), /* Resplandor dorado más fuerte */
+        0 0 40px rgba(30, 27, 8, 0.5), /* Resplandor dorado más suave y extendido */
+        0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra original (opcional, puedes quitarla si solo quieres el resplandor) */
+    /* Las propiedades de margin se eliminan del .container porque el centrado lo haremos con el body (Flexbox) */
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: #0000008b; /* Fondo de sección igual que el contenedor */
+    padding: 25px; /* Más padding */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #3a3a3a; /* Borde sutil */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-button {
+    transition: all 0.3s ease;
+    background-color: #3b82f6; /* Azul vibrante */
+    color: white;
+    border-radius: 9999px; /* Botones redondos/píldora */
+    padding: 10px 20px; /* Más padding */
+    font-weight: 600; /* Texto más bold */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    transform: translateY(-3px); /* Efecto 3D al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #2563eb; /* Azul más oscuro al hover */
+}
+
+.nav-button.active {
+    background-color: #1d4ed8; /* Azul más oscuro para el activo */
+    color: white;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra interna para activo */
+}
+
+/* Estilos para inputs y selects */
+input[type="text"],
+input[type="number"],
+select {
+    background-color: #3a3a3a; /* Fondo oscuro para inputs */
+    border: 1px solid #555; /* Borde sutil */
+    color: #e0e0e0; /* Texto claro */
+    padding: 10px; /* Más padding */
+    border-radius: 6px; /* Bordes redondeados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #b0b0b0; /* Placeholder más claro */
+}
+
+/* Estilos de tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #4a4a4a; /* Borde de tabla más oscuro */
+    padding: 12px; /* Más padding */
+    text-align: left;
+    color: #e0e0e0; /* Texto claro */
+}
+
+th {
+    background-color: #3a3a3a; /* Encabezado de tabla oscuro */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2f2f2f; /* Zebra striping para filas pares */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #282828; /* Zebra striping para filas impares */
+}
+
+/* Botones de acción */
+button {
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.bg-green-500 {
+    background-color: #10b981;
+} /* Verde esmeralda */
+.hover\:bg-green-700:hover {
+    background-color: #059669;
+}
+
+.bg-indigo-500 {
+    background-color: #6366f1;
+} /* Índigo */
+.hover\:bg-indigo-700:hover {
+    background-color: #4338ca;
+}
+
+.bg-red-500 {
+    background-color: #ef4444;
+} /* Rojo */
+.hover\:bg-red-700:hover {
+    background-color: #dc2626;
+}
+
+.bg-purple-500 {
+    background-color: #a855f7;
+} /* Púrpura */
+.hover\:bg-purple-700:hover {
+    background-color: #9333ea;
+}
+
+.bg-teal-500 {
+    background-color: #14b8a6;
+} /* Teal para guardar */
+.hover\:bg-teal-700:hover {
+    background-color: #0d9488;
+}
+
+.bg-orange-500 {
+    background-color: #f97316;
+} /* Naranja para cargar */
+.hover\:bg-orange-700:hover {
+    background-color: #ea580c;
+}
+
+/* Estilos específicos para texto y etiquetas */
+.text-gray-700 {
+    color: #e0e0e0;
+} /* Asegurar que el texto gris sea claro */
+.text-gray-800 {
+    color: #f0f0f0;
+} /* Títulos más claros */
+.bg-gray-50 {
+    background-color: #3a3a3a;
+} /* Fondo de estadísticas */
+.text-gray-500 {
+    color: #b0b0b0;
+} /* Headers de tabla más suaves */
+
+/* Ajuste para el input file */
+#cargar-copia-seguridad-input {
+    color: #e0e0e0; /* Color de texto del input de archivo */
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+#cargar-copia-seguridad-input::file-selector-button {
+    background-color: #4f46e5; /* Azul oscuro para el botón de seleccionar archivo */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#cargar-copia-seguridad-input::file-selector-button:hover {
+    background-color: #4338ca;
+}
